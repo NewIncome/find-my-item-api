@@ -1,4 +1,4 @@
-# Catalogue of Statistics
+# API: Find Your Item
 API with a DB where we can retrieve an item's info and favorite-item's list from a logged in User. Coded with Ruby on Rails following TDD practices.
 Built according to [Microverse's requirements](https://www.notion.so/Final-Capstone-Project-Find-Your-House-9a424802e7dc48eb8ef40e2ac09397d1).
 
@@ -10,7 +10,7 @@ Built according to [Microverse's requirements](https://www.notion.so/Final-Capst
 
 ## Links
 [GitHub Repo](https://github.com/NewIncome/find-my-item-api)
-[:globe_with_meridians::computer: Heroku Livelink](https://statistics-catalogue.herokuapp.com/)
+[:globe_with_meridians::computer: Heroku Livelink](https://findmyitem-api.herokuapp.com)
 [ERD with draw.io](https://app.diagrams.net/#W388c734d24bdc20a%2F388C734D24BDC20A!531)
 
 ## Built With 
