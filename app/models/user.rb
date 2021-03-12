@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  belongs_to :favorites_list
+  has_one :favorites_list
 end
