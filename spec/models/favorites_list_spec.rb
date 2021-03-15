@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe FavoritesList, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # Associtaions Tests
+  it { should belong_to(:user).dependent(:destroy) }
+  it { should have_many(:items) }
+  # Validations Test
+  it { should validate_presence_of(:user) }
+  it { should validate_uniqueness_of(:user) }
+  it { should validate_uniqueness_of(:items) }
 end

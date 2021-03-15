@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 2021_03_12_003523) do
 
   create_table "favorites_lists", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "items_id"
+    t.bigint "item_id", null: false
+    t.string "user_item"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["items_id"], name: "index_favorites_lists_on_items_id", unique: true
+    t.index ["item_id"], name: "index_favorites_lists_on_item_id"
     t.index ["user_id"], name: "index_favorites_lists_on_user_id"
+    t.index ["user_item"], name: "index_favorites_lists_on_user_item", unique: true
   end
 
   create_table "items", force: :cascade do |t|
@@ -33,10 +35,9 @@ ActiveRecord::Schema.define(version: 2021_03_12_003523) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.bigint "favorites_list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["favorites_list_id"], name: "index_users_on_favorites_list_id"
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
   add_foreign_key "favorites_lists", "users"
