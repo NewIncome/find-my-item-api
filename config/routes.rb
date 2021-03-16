@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'favorites_lists/index'
+  get 'favorites_lists/show'
+  get 'favorites_lists/create'
+  get 'favorites_lists/update'
+  get 'favorites_lists/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users do
     resources :favorites_lists
