@@ -22,7 +22,7 @@ RSpec.describe 'Favorites_List', test: :request do
 
   # POST, add an Item to the logged-in User's list
   describe 'POST /favorites_lists' do
-    let(:valid_attributes) { { user:id:1, item_id:3 } }
+    let(:valid_attributes) { { user_id:1, item_id:3 } }
 
     context 'when the request params are valid' do
       before { post '/favorites_list/1', params: valid_attributes }
