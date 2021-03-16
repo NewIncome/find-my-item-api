@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
   def index
-  end
-
-  def create
+    @items = Item.all
+    render json: { @items }, status: :ok
   end
 
   def show
+    @item = Item.find_by(id: params[:id])
+    render json: { @item }, status: :ok
   end
 
   private
