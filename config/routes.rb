@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   post '/login', to: 'users#login'
   post '/signup', to: 'users#signup'
+  get '/utest', to: 'users#test'
+  get '/fltest', to: 'favorites_lists#test'
   delete '/logout', to: 'users#logout'
 end
 
