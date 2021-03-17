@@ -32,8 +32,10 @@ RSpec.describe 'Item API', type: :request do
 
   # Test suite POST /items
   describe 'POST /items' do
-    let(:valid_attributes) { { name: 'item1',
-                               description: 'item description' } }
+    let(:valid_attributes) do
+      { name: 'item1',
+        description: 'item description' }
+    end
 
     context 'when the request params are valid' do
       before { post '/item/11', params: valid_attributes }
@@ -41,7 +43,7 @@ RSpec.describe 'Item API', type: :request do
       it 'creates a new item' do
         expect(JSON.parse(response.body)).to_not be_empty
       end
-  
+
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
       end

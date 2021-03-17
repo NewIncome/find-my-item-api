@@ -42,10 +42,6 @@ class FavoritesListsController < ApplicationController
 
   def logged_in_user
     @user = User.find_by(id: session[:user_id]) if session[:user_id]
-    if @user
-      return @user
-    else
-      render json: ["User not signed in", session[:user_id], @user], status: :unauthorized
-    end
+    @user || render(json: ['User not signed in', session[:user_id], @user], status: :unauthorized)
   end
 end

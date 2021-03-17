@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       render json: [session[:user_id], @user, @user.id], status: :accepted
     else
-      render json: "User not found", status: :not_found
+      render json: 'User not found', status: :not_found
     end
   end
 
@@ -26,8 +26,8 @@ class UsersController < ApplicationController
       session.keys,
       session.values,
       session.id,
-      session.has_key?(:user_id),
-      session.has_key?('user_id'),
+      session.key?(:user_id),
+      session.key?('user_id'),
       # session.methods,
       params
     ]
