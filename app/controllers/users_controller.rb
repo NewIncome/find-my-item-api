@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def logout
     session.destroy
     head :no_content
-  end 
+  end
 
   private
 
