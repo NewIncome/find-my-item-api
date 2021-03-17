@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe 'Favorites_List', test: :request do
   let(:user) { create(:user, 1) }
   let(:item) { create(:item, 10) }
