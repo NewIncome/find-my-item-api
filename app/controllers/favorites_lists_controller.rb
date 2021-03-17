@@ -3,13 +3,13 @@ class FavoritesListsController < ApplicationController
 
   def index
     @fav_items = FavoritesList.all.includes(:user)
-    render json: { @fav_items }, status: :ok
+    render json: @fav_items, status: :ok
   end
 
   def create
     @fav_item = FavoritesList.new(item_params)
     if @fav_item.save!
-      render json: { @item }, status: :added_favorite
+      render json: @item, status: :added_favorite
     else
       head :no_content
     end
