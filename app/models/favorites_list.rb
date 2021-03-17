@@ -1,7 +1,7 @@
 class FavoritesList < ApplicationRecord
   before_validation { self.user_item = "#{user_id}" + "#{item_id}" }
 
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   belongs_to :item
 
   validates_presence_of :user, :item, :user_item
