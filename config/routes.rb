@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   end
   resources :items, only: %i[index show]
 
+  delete '/users/:user_id/favorites_lists/', to: 'favorites_lists#destroy'
+
   post '/login', to: 'users#login'
   post '/signup', to: 'users#signup'
   # get '/utest', to: 'users#test'
