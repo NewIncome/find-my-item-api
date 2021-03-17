@@ -19,20 +19,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def test
-    render json: [
-      session,
-      session[:user_id],
-      session.keys,
-      session.values,
-      session.id,
-      session.key?(:user_id),
-      session.key?('user_id'),
-      # session.methods,
-      params
-    ]
-  end
-
   def logout
     session.delete(:user_id)
     head :no_content
@@ -44,7 +30,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name)
   end
 
-  # def log_in_user
-  #   session[:user_id] = @user.id
-  # end
+  def log_in_user
+    session[:user_id] = @user.id
+  end
 end

@@ -1,10 +1,7 @@
 RSpec.describe 'Item API', type: :request do
-  # Initialize test data
-  # Create a user, items(10)
   let(:user) { create(:user, 1) }
   let(:item) { create(:item, 10) }
 
-  # GET all the available items
   describe 'GET /items' do
     before { get '/items' }
 
@@ -17,7 +14,6 @@ RSpec.describe 'Item API', type: :request do
     end
   end
 
-  # Test suite for GET /items/:id
   describe 'GET /items/1' do
     before { get '/items/1' }
 
@@ -30,7 +26,6 @@ RSpec.describe 'Item API', type: :request do
     end
   end
 
-  # Test suite POST /items
   describe 'POST /items' do
     let(:valid_attributes) do
       { name: 'item1',

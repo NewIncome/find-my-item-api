@@ -1,6 +1,4 @@
 class FavoritesListsController < ApplicationController
-  # before_action :logged_in_user
-
   def index
     @fav_items = FavoritesList.all.includes(:user).where(user_id: params[:user_id])
     render json: @fav_items, status: :ok

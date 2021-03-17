@@ -1,10 +1,7 @@
 RSpec.describe 'User API', type: :request do
-  # Initialize data
-  # Create a User, 10 Items and 3 fav_requests
   let(:user1) { create(:user, 1) }
   let(:valid_attributes) { { name: 'Panchito' } }
 
-  # Can signup
   describe 'GET /user/2' do
     before { post '/users', params: valid_attributes }
 
@@ -17,7 +14,6 @@ RSpec.describe 'User API', type: :request do
     end
   end
 
-  # Login
   describe 'GET /user/1' do
     before { get '/user/1' }
 
