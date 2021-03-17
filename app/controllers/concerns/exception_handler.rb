@@ -12,5 +12,9 @@ module ExceptionHandler
       # json_response({ message: e.message }, :unprocessable_entity)
       render json: { message: e.message }, status: :unprocessable_entity
     end
+
+    rescue_from ActiveRecord::RecordNotUnique do |e|
+      render json: { message: e.message }, status: :unprocessable_entity
+    end
   end
 end
