@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create] do
     resources :favorites_lists, only: %i[index create destroy]
   end
-  resources :items, only: %i[index show]
+  resources :items, only: %i[index show create update destroy]
 
   delete '/users/:user_id/favorites_lists/', to: 'favorites_lists#destroy'
 
