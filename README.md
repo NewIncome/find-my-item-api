@@ -2,12 +2,6 @@
 API with a DB where we can retrieve an item's info and favorite-item's list from a logged in User. Coded with Ruby on Rails following TDD practices.
 Built according to [Microverse's requirements](https://www.notion.so/Final-Capstone-Project-Find-Your-House-9a424802e7dc48eb8ef40e2ac09397d1).
 
-<div style="text-align: center;">
-<img src="src/assets/S-C_01.png" alt="image" style="zoom: 33%;" />
-<img src="src/assets/S-C_02.png" alt="image" style="zoom: 33%;" />
-<img src="src/assets/S-C_03.png" alt="image" style="zoom: 33%;" />
-</div>
-
 ## Links
 [GitHub Repo](https://github.com/NewIncome/find-my-item-api)
 [:globe_with_meridians::computer: Heroku Livelink](https://findmyitem-api.herokuapp.com)
@@ -20,27 +14,94 @@ Built according to [Microverse's requirements](https://www.notion.so/Final-Capst
 - RSpec
 - PostgreSQL
 
+## Database ERD
+
+<div style="text-align: center;">
+<img src="app/assets/FinalCap ERD.png" alt="image" style="zoom: 33%;" />
+</div>
+
 ## Getting Started
 
-In order to start with this project you need the next:
+This APP uses PostgreSQL, so make sure you have it installed in your development and test environment. This could be changed in the `./config/database.yml` file if needed.
 
-1. Get a copy of this project [this repository :blue_book:](https://github.com/NewIncome/find-my-item-api)
-<!-- 
-Once you have cloned this project
-1. Go to project folder
-2. run `npm install` or `yarn install`
-3. run `npm start` -->
+Also note that the database expects to have a specific user with a password (in `database.yml` file).
 
-### Usage
+Feel free to create more entries in the `db/seeds.rd` file to generate more initial content.
 
-<!-- - Enter the **Name** of a company you wish check it's stats, for a list of companies that have that name or those letters i it's name
-- Click on the **Company item** you like to see it's details/stats
-- You can additionally Select filter to view less companies, either by **currency** or by **stockExchange** -->
+To get started with the APP, clone [the repo :blue_book:](https://github.com/NewIncome/find-my-item-api) and then install the needed gems with:
+
+```
+$ bundle install --without production
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+Then, to seed moc data to the DB for interaction:
+
+```
+$ rails db:seed
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
+
+## Usage
+
+For _example_, using [HTTPie](https://httpie.io/) you can (after runnign the API in your local server):
+
+// The user and/or item to be worked with will go in the link with it's ID.
+
+- Add a user
+```
+$ http POST :3000/users name="New User Name"
+```
+- See all Items
+```
+$ http :3000/items
+```
+- Add an Item
+```
+$ http POST :3000/items name="New Item Name" description="Item #1's description"
+```
+- Update an Item's info
+```
+$ http PUT :3000/items/1 description="New item #1 description"
+```
+- Delete an Item
+```
+$ http DELETE :3000/items/1
+```
+- See a User's Favorite List of Items
+```
+$ http :3000/users/3/favorites_lists
+```
+- Add an Item to a User's Favorite List
+```
+$ http POST :3000/users/3/favorites_lists item_id=1
+```
+- Delete an Item from a User's Favorite List
+```
+$ http DELETE :3000/users/3/favorites_lists item_id=1
+```
 
 ## Improvements
 
 Features pending to add to this app:
-- add improved UI with CSS
+- add improved User info and login
 
 ## Author
 👤 **Jose Alfredo Cardenas**
@@ -60,25 +121,3 @@ If you got until here, show your love hitting the ⭐️ button, greatly appreci
 ## 📝 License
 
 MIT
-
-
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
