@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'User API', type: :request do
-  let(:user1) { create(:user, 1) }
+  let(:user) { create(:user) }
   let(:valid_attributes) { { name: 'Panchito' } }
 
   describe 'POST /users' do
     before { post '/users', params: valid_attributes }
 
-    it 'returns the logged in user profile' do
+    it "returns the user's info" do
       expect(JSON.parse(response.body)).not_to be_empty
     end
 
