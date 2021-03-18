@@ -14,7 +14,7 @@ RSpec.describe 'Item API', type: :request do
 
   describe 'GET /items/1' do
     before { get "/items/#{items[1].id}" }
-    
+
     it 'returns a selected item' do
       expect(JSON.parse(response.body)).to_not be_empty
     end
