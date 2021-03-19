@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find_by(name: params[:name])
     if @user
       session[:user_id] = @user.id
-      render json: [session[:user_id], @user, @user.id], status: :accepted
+      render json: @user, status: :accepted
     else
       render json: 'User not found', status: :not_found
     end

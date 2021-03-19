@@ -3,9 +3,9 @@ API with a DB where we can retrieve an item's info and favorite-item's list from
 Built according to [Microverse's requirements](https://www.notion.so/Final-Capstone-Project-Find-Your-House-9a424802e7dc48eb8ef40e2ac09397d1).
 
 ## Links
-[GitHub Repo](https://github.com/NewIncome/find-my-item-api)
-[:globe_with_meridians::computer: Heroku Livelink](https://findmyitem-api.herokuapp.com)
-[ERD with draw.io](https://app.diagrams.net/#W388c734d24bdc20a%2F388C734D24BDC20A!531)
+* [GitHub Repo](https://github.com/NewIncome/find-my-item-api)
+* [:globe_with_meridians::computer: Heroku Livelink](https://findmyitem-api.herokuapp.com)
+* [ERD with draw.io](https://app.diagrams.net/#W388c734d24bdc20a%2F388C734D24BDC20A!531)
 
 ## Built With 
 
