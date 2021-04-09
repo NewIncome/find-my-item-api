@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   def image_link()
     rand_img = lambda do
       num = Random.rand(1..700)
-      return rand_img if [150].include?(num)
+      return rand_img if [150, 578, 636].include?(num)
 
       num
     end

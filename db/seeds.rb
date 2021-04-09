@@ -11,7 +11,7 @@
 
 def rand_img()
   num = Random.rand(1..700)
-  if [150].include?(num)
+  if [150, 578, 636].include?(num)
     return rand_img
   else
     return num
