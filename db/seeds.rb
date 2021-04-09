@@ -7,13 +7,23 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create some Users
-3.times { |i| User.create(name: "Alexo-#{i}") }
+3.times { |i| User.create(name: "Roboto-#{i}") }
+
+def rand_img()
+  num = Random.rand(1..700)
+  if [150].include?(num)
+    return rand_img
+  else
+    return num
+  end
+end
 
 # Create some Items
 15.times do
   Item.create(
     name: Faker::Appliance.equipment,
-    description: Faker::Lorem.sentences(number: 3)
+    description: Faker::Lorem.paragraphs(number: 2),
+    image: "https://picsum.photos/id/#{rand_img}/437/226?blur=3"
   )
 end
 
