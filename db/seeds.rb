@@ -11,7 +11,7 @@
 
 def rand_img()
   num = Random.rand(1..700)
-  if [150, 438, 561, 578, 589, 636, 647].include?(num)
+  if [138, 150, 438, 489, 561, 578, 589, 636, 647].include?(num)
     return rand_img
   else
     return num
@@ -23,7 +23,7 @@ end
   Item.create(
     name: Faker::Appliance.equipment,
     description: Faker::Lorem.paragraphs(number: 2),
-    image: "https://picsum.photos/id/#{rand_img}/437/226?blur=3"
+    image: "https://picsum.photos/id/#{rand_img}/637/426?blur=3"
   )
 end
 

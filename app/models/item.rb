@@ -11,11 +11,11 @@ class Item < ApplicationRecord
   def image_link()
     rand_img = lambda do
       num = Random.rand(1..700)
-      return rand_img if [150, 438, 561, 578, 589, 636, 647].include?(num)
+      return rand_img if [138, 150, 438, 489, 561, 578, 589, 636, 647].include?(num)
 
       num
     end
 
-    "https://picsum.photos/id/#{rand_img.call}/437/226?blur=3"
+    "https://picsum.photos/id/#{rand_img.call}/637/426?blur=3"
   end
 end
