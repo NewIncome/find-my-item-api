@@ -5,3 +5,42 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# Create some Users
+3.times { |i| User.create(name: "Roboto-#{i}") }
+
+def rand_img()
+  num = Random.rand(1..700)
+  if [138, 150, 438, 489, 561, 578, 589, 636, 647].include?(num)
+    return rand_img
+  else
+    return num
+  end
+end
+
+# Create some Items
+15.times do
+  Item.create(
+    name: Faker::Appliance.equipment,
+    description: Faker::Lorem.paragraphs(number: 2),
+    image: "https://picsum.photos/id/#{rand_img}/637/426?blur=3"
+  )
+end
+
+def checkRepeated(user, num)
+  if FavoritesList.find_by(user_item: "#{user}"+"#{num}")
+    return checkRepeated(user, Random.rand(1..14))
+  else
+    return num
+  end
+end
+
+# Create some favorite Items for the Users
+3.times do |i|
+  4.times do
+    FavoritesList.create(
+      user_id: i,
+      item_id: checkRepeated(i, Random.rand(1..14))
+    )
+  end
+end
